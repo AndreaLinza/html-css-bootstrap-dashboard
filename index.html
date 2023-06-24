@@ -20,13 +20,13 @@
         crossorigin="anonymous"></script>
 
     <header>
-        <!-- Nav bar -->
+        <!-------------------------- Nav bar -------------------------->
         <nav class="navbar navbar-expand bg-body-tertiary position-fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="./img/logo.svg" alt="Logo" width="150" height="50"
-                        class="d-lg-inline-block align-text-top d-none mx-2 ">
-                    <img class="d-lg-none" src="./img/mobile-logo.png" alt="Bootstrap" width="50" height="50"
-                        class="d-lg-none"></a>
+                <a class="navbar-brand" href="#"><img src="./img/logo.svg" alt="Logo" width="120" height="50"
+                        class="d-lg-inline-block align-text-top d-none mx-2 object-contain">
+                    <img class="d-lg-none object-contain" src="./img/mobile-logo.png" alt="Bootstrap" width="50"
+                        height="50"></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -36,16 +36,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                     <!-- Barra di ricerca -->
-                    <form class="container-fluid">
-                        <div class="input-group">
-                            <span class="my-input-group-text" id="basic-addon1"><i
-                                    class="fa-solid fa-magnifying-glass"></i></span>
-                            <input type="search" class="form-control" placeholder="Prova a cercare: Lezione di Laravel"
-                                aria-label="Prova a cercare" aria-describedby="basic-addon1">
-                        </div>
+                    <form class="d-flex flex-grow-1" role="search">
+                        <button class="btn search-btn input-search-btn border-end-0 text-dark rounded-end-0"
+                            type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input class="form-control rounded-start-0 me-2" type="search" placeholder="Search"
+                            aria-label="Search">
                     </form>
                     <!-- Icone di destra -->
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-none d-lg-flex">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-none d-lg-flex">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-list"></i></a>
                         </li>
@@ -75,178 +73,366 @@
 
     </header>
 
-    <main class="main-content-container flex-grow-1">
 
-        <aside>
+    <div class="flex-grow-1 overflow-auto d-flex">
 
-            <!-- Sidebar -->
-            <div class="d-flex flex-column flex-shrink-0 bg-dark my-aside-bar bg-img pt-2">
-                <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-                    <li class="nav-item d-flex justify-content-center">
-                        <a href="#" class="nav-link d-flex text-white py-3" aria-current="page" title=""
-                            data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
-                            <span class=""><i class="fa-solid fa-house" style="width: 20px; height: 20px;"></i></span>
-                            <span class="d-none d-lg-flex px-3">Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item d-flex justify-content-center">
-                        <a href="#" class="nav-link d-flex text-white py-3" title="" data-bs-toggle="tooltip"
-                            data-bs-placement="right" data-bs-original-title="Dashboard">
-                            <span class="d-lg-inline-block"><i class="fa-solid fa-chart-simple"
-                                    style="width:20px; height: 20px;"></i></span>
-                            <span class="d-none d-lg-inline-block px-3">Stats</span>
-                        </a>
-                    </li>
-                    <li class="nav-item d-flex justify-content-center">
-                        <a href="#" class="nav-link d-flex text-white py-3" title="" data-bs-toggle="tooltip"
-                            data-bs-placement="right" data-bs-original-title="Orders">
-                            <span class=""><i class="fa-solid fa-signal" style="width: 20px; height: 20px;"></i></span>
-                            <span class="d-none d-lg-flex px-3">Signals</span>
-                        </a>
-                    </li>
+        <!----------------------- Sidebar ---------------------->
+        <aside
+            class="d-flex flex-column flex-shrink-0 overflow-auto position-fixed-left z-3 my-aside-bar bg-img bg-dark pt-2">
+            <!-- Container  -->
+            <div class="nav nav-pills nav-flush flex-column mb-auto text-center"> 
+                <li class="nav-item nav-item-active d-flex justify-content-center">
+                    <button type="button" class="btn btn-secondary rounded-0 nav-link d-flex text-white py-3" aria-current="page"
+                        title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                        <span class=""><i class="fa-solid fa-house" style="width: 20px; height: 20px;"></i></span>
+                        <span class="d-none d-lg-flex px-3">Home</span>
 
-                </ul>
-                <div class="dropdown mb-4">
-                    <a href="#"
-                        class="d-flex align-items-center justify-content-center p-3 link-light text-decoration-none"
-                        id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span><i class="fa-solid fa-gear"></i></span>
-                        <span class="d-none d-lg-flex px-3">Admin</span>
-                    </a>
-                    <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
-                        <li><a class="dropdown-item" href="#">Nuovo Progetto...</a></li>
-                        <li><a class="dropdown-item" href="#">Impostazioni</a></li>
-                        <li><a class="dropdown-item" href="#">Profilo</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
-                    </ul>
-                </div>
+                    </button>
+                </li>
+                <li class="nav-item d-flex justify-content-center">
+                    <button type="button" class="btn btn-secondary nav-link d-flex text-white py-3" title=""
+                        data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+                        <span class="d-lg-inline-block"><i class="fa-solid fa-chart-simple"
+                                style="width:20px; height: 20px;"></i></span>
+                        <span class="d-none d-lg-inline-block px-3">Stats</span>
+                    </button>
+                </li>
+                <li class="nav-item d-flex justify-content-center">
+                    <button type="button" class="btn btn-secondary nav-link d-flex text-white py-3" title=""
+                        data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
+                        <span class=""><i class="fa-solid fa-signal" style="width: 20px; height: 20px;"></i></span>
+                        <span class="d-none d-lg-flex px-3">Signals</span>
+                    </button>
+                </li>             
             </div>
+            <div class="dropdown mt-auto mx-auto">
+                <button type="button"
+                    class="btn btn-secondary nav-link d-flex align-items-center justify-content-center p-3 link-light text-decoration-none"
+                    id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span><i class="fa-solid fa-gear"></i></span>
+                    <span class="d-none d-lg-flex px-3">Admin</span>
+                </button>
+                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
+                    <li><a class="dropdown-item" href="#">Nuovo Progetto...</a></li>
+                    <li><a class="dropdown-item" href="#">Impostazioni</a></li>
+                    <li><a class="dropdown-item" href="#">Profilo</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+
         </aside>
 
+        <!--------------- Main Centrale ------------------>
+        <main class="main-content-container flex-grow-1">
+            <div class="flex-grow-1">
+                <!------------ Sezione della barra superiore ------------------>
+                <section class="top-bar ">
+                    <div class="container-fluid text-white">
+                        <div class="row flex-column flex-md-row">
 
-        <div class="flex-grow-1">
-            <section class="top-bar ">
-                <div class="container-fluid text-white">
-                    <div class="row flex-column flex-md-row">
+                            <!-- Col Offcanvas -->
+                            <div
+                                class="col gy-3 order-md-3 d-flex justify-content-md-end align-items-center align-self-md-start">
+                                <span class="d-flex pe-2">Nuovo Studente</span>
+                                <button class="btn plus-btn" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
+                                        class="fa-solid fa-plus"></i></button>
 
-                        <!-- Col Offcanvas -->
-                        <div class="col gy-3 order-md-3 d-flex justify-content-md-end align-items-center align-self-md-start">
-                            <span class="d-flex pe-2">Nuovo Studente</span>
-                            <button class="btn plus-btn" type="button" data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
-                                    class="fa-solid fa-plus"></i></button>
-
-                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-                                aria-labelledby="offcanvasRightLabel">
-                                <div class="offcanvas-header">
-                                    <h5 class="offcanvas-title" id="offcanvasRightLabel">Inserisci un nuovo studente
-                                    </h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                        aria-label="Close"></button>
-                                </div>
-                                <!-- Body OffCanvas -->
-                                <div class="offcanvas-body">
-                                    <div class="row g-3">
-                                        <div class="col">
-                                            <label for="inputText4" class="form-label">Nome</label>
-                                            <input type="text" class="form-control" placeholder="First name"
-                                                aria-label="First name">
-                                        </div>
-                                        <div class="col">
-                                            <label for="inputText4" class="form-label">Cognome</label>
-                                            <input type="text" class="form-control" placeholder="Last name"
-                                                aria-label="Last name">
-                                        </div>
+                                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                                    aria-labelledby="offcanvasRightLabel">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Inserisci un nuovo studente
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
                                     </div>
-                                    <form class="row g-3">
-                                        <div class="col-md-6">
-                                            <label for="inputEmail4" class="form-label">Email</label>
-                                            <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
-                                            <div class="input-group">
-                                                <div class="input-group-text">@</div>
-                                                <input type="text" class="form-control" id="autoSizingInputGroup"
-                                                    placeholder="Username">
+                                    <!-- Body OffCanvas -->
+                                    <div class="offcanvas-body">
+                                        <div class="row g-3">
+                                            <div class="col">
+                                                <label for="inputText4" class="form-label">Nome</label>
+                                                <input type="text" class="form-control" placeholder="First name"
+                                                    aria-label="First name">
+                                            </div>
+                                            <div class="col">
+                                                <label for="inputText4" class="form-label">Cognome</label>
+                                                <input type="text" class="form-control" placeholder="Last name"
+                                                    aria-label="Last name">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <label for="inputPassword4" class="form-label">Password</label>
-                                            <input type="password" class="form-control" id="inputPassword4">
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="inputAddress" class="form-label">Indirizzo</label>
-                                            <input type="text" class="form-control" id="inputAddress"
-                                                placeholder="1234 Pinco Pallo">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="inputCity" class="form-label">Città</label>
-                                            <input type="text" class="form-control" id="inputCity">
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label for="inputState" class="form-label">Stato</label>
-                                            <select id="inputState" class="form-select">
-                                                <option selected>Scegli...</option>
-                                                <option>...</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <label for="inputZip" class="form-label">CAP</label>
-                                            <input type="text" class="form-control" id="inputZip">
-                                        </div>
-                                        <div class="col-12 mb-3">
-                                            <label for="formFile" class="form-label">Foto</label>
-                                            <input class="form-control" type="file" id="formFile">
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                                <label class="form-check-label" for="gridCheck">
-                                                    Seleziona per proseguire
-                                                </label>
+                                        <form class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="inputEmail4" class="form-label">Email</label>
+                                                <label class="visually-hidden"
+                                                    for="autoSizingInputGroup">Username</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-text">@</div>
+                                                    <input type="text" class="form-control" id="autoSizingInputGroup"
+                                                        placeholder="Username">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <button type="submit" class="btn btn-primary">Salva</button>
-                                            <button type="button" class="btn btn-warning">Svuota</button>
-                                        </div>
-                                    </form>
+                                            <div class="col-md-6">
+                                                <label for="inputPassword4" class="form-label">Password</label>
+                                                <input type="password" class="form-control" id="inputPassword4">
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="inputAddress" class="form-label">Indirizzo</label>
+                                                <input type="text" class="form-control" id="inputAddress"
+                                                    placeholder="1234 Pinco Pallo">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="inputCity" class="form-label">Città</label>
+                                                <input type="text" class="form-control" id="inputCity">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="inputState" class="form-label">Stato</label>
+                                                <select id="inputState" class="form-select">
+                                                    <option selected>Scegli...</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label for="inputZip" class="form-label">CAP</label>
+                                                <input type="text" class="form-control" id="inputZip">
+                                            </div>
+                                            <div class="col-12 mb-3">
+                                                <label for="formFile" class="form-label">Foto</label>
+                                                <input class="form-control" type="file" id="formFile">
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                    <label class="form-check-label" for="gridCheck">
+                                                        Seleziona per proseguire
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary">Salva</button>
+                                                <button type="button" class="btn btn-warning">Svuota</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Col Boolean Badge -->
-                        <div class="col col-lg-6 order-md-1">
-                            <h2 class="d-lg-inline-block pt-3 fw-light">Boolean <span class="badge rounded-pill my-text-bg-primary">Piano blaze</span><br>
-                                <span class="badge rounded-pill my-text-bg-primary">3 app</span>
-                                <span class="fs-6"><i class="fa-solid fa-angles-right"></i></span>
-                                <span class="badge rounded-pill my-text-bg-primary d-lg-none"><i
-                                        class="fa-solid fa-plus"></i></span>
-                                <span class="badge rounded-pill my-text-bg-primary d-none d-lg-inline-block">Boolean mobile
-                                    app</span>
-                                <span class="badge rounded-pill my-text-bg-primary d-none d-lg-inline-block">Boolean web
-                                    app</span>
-                                <span class="badge rounded-pill my-text-bg-primary d-none d-lg-inline-block ">Boolean blog
-                                    app</span></h2>
-                            
-                        </div>
+                            <!-- Col Boolean Badge -->
+                            <div class="col col-lg-6 order-md-1">
+                                <h2 class="d-lg-inline-block pt-3 fw-light">Boolean <span
+                                        class="badge rounded-pill my-text-bg-primary">Piano blaze</span><br>
+                                    <span class="badge rounded-pill my-text-bg-primary">3 app</span>
+                                    <span class="fs-6"><i class="fa-solid fa-angles-right"></i></span>
+                                    <span class="badge rounded-pill my-text-bg-primary d-lg-none"><i
+                                            class="fa-solid fa-plus"></i></span>
+                                    <span class="badge rounded-pill my-text-bg-primary d-none d-lg-inline-block">Boolean
+                                        mobile
+                                        app</span>
+                                    <span class="badge rounded-pill my-text-bg-primary d-none d-lg-inline-block">Boolean
+                                        web
+                                        app</span>
+                                    <span
+                                        class="badge rounded-pill my-text-bg-primary d-none d-lg-inline-block ">Boolean
+                                        blog
+                                        app</span>
+                                </h2>
 
-                        <!-- Col Numero Studenti -->
-                        <div class="col order-md-2">
-                            <p class="fs-6 pt-3 mb-0">Studenti online negli ultimi 30 minuti</p>
-                            <span class="fs-1 mb-4 d-inline-block">125</span>
+                            </div>
+
+                            <!-- Col Numero Studenti -->
+                            <div class="col order-md-2">
+                                <p class="fs-6 pt-3 mb-0">Studenti online negli ultimi 30 minuti</p>
+                                <span class="fs-1 mb-4 d-inline-block">125</span>
+                            </div>
+
                         </div>
 
                     </div>
+                </section>
+                <!-------------- Sezione Card ------------------>
+                <section>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <!-- Col di Sinistra -->
+                            <div class="col-lg-8">
+                                <!-- Card Prossime Classi -->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <h4>Prossime Classi</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table text-center">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-start" scope="col">Nome</th>
+                                                    <th class="d-none d-md-table-cell" scope="col">Data inizio</th>
+                                                    <th class="d-none d-md-table-cell" scope="col">ROI</th>
+                                                    <th scope="col">Stato</th>
+                                                    <th scope="col">Azioni</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="text-start" scope="row">
+                                                        <img src="./img/class-avatar.jpg"
+                                                            class="img-fluid img-thumbnail object-fit-sm-contain "
+                                                            alt="class-avatar" style="width: 50px;">
+                                                        <span class="">Classe 75</span>
+                                                    </th>
+                                                    <td class="d-none d-md-table-cell">15 Feb 2021</td>
+                                                    <td class="d-none d-md-table-cell">20%</td>
+                                                    <td><span class="badge text-bg-success">Done</span></td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start" scope="row">
+                                                        <img src="./img/class-avatar.jpg"
+                                                            class="img-fluid img-thumbnail object-fit-sm-contain "
+                                                            alt="class-avatar" style="width: 50px;">
+                                                        <span class="">Classe 76</span>
+                                                    </th>
+                                                    <td class="d-none d-md-table-cell">16 Feb 2021</td>
+                                                    <td class="d-none d-md-table-cell">20%</td>
+                                                    <td><span class="badge text-bg-success">Done</span></td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start" scope="row">
+                                                        <img src="./img/class-avatar.jpg"
+                                                            class="img-fluid img-thumbnail object-fit-sm-contain "
+                                                            alt="class-avatar" style="width: 50px;">
+                                                        <span class="">Classe 77</span>
+                                                    </th>
+                                                    <td class="d-none d-md-table-cell">17 Feb 2021</td>
+                                                    <td class="d-none d-md-table-cell">20%</td>
+                                                    <td><span class="badge text-bg-warning text-light">process</span>
+                                                    </td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start" scope="row">
+                                                        <img src="./img/class-avatar.jpg"
+                                                            class="img-fluid img-thumbnail object-fit-sm-contain "
+                                                            alt="class-avatar" style="width: 50px;">
+                                                        <span class="">Classe 78</span>
+                                                    </th>
+                                                    <td class="d-none d-md-table-cell">18 Feb 2021</td>
+                                                    <td class="d-none d-md-table-cell">20%</td>
+                                                    <td><span class="badge text-bg-success">Done</span></td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start" scope="row">
+                                                        <img src="./img/class-avatar.jpg"
+                                                            class="img-fluid img-thumbnail object-fit-sm-contain "
+                                                            alt="class-avatar" style="width: 50px;">
+                                                        <span class="">Classe 79</span>
+                                                    </th>
+                                                    <td class="d-none d-md-table-cell">19 Feb 2021</td>
+                                                    <td class="d-none d-md-table-cell">20%</td>
+                                                    <td><span class="badge text-bg-danger">Danger</span></td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start" scope="row">
+                                                        <img src="./img/class-avatar.jpg"
+                                                            class="img-fluid img-thumbnail object-fit-sm-contain "
+                                                            alt="class-avatar" style="width: 50px;">
+                                                        <span class="">Classe 80</span>
+                                                    </th>
+                                                    <td class="d-none d-md-table-cell">20 Feb 2021</td>
+                                                    <td class="d-none d-md-table-cell">20%</td>
+                                                    <td><span class="badge text-bg-success">Done</span></td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start" scope="row">
+                                                        <img src="./img/class-avatar.jpg"
+                                                            class="img-fluid img-thumbnail object-fit-sm-contain "
+                                                            alt="class-avatar" style="width: 50px;">
+                                                        <span class="">Classe 81</span>
+                                                    </th>
+                                                    <td class="d-none d-md-table-cell">21 Feb 2021</td>
+                                                    <td class="d-none d-md-table-cell">20%</td>
+                                                    <td><span class="badge text-bg-danger">Danger</span></td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start" scope="row">
+                                                        <img src="./img/class-avatar.jpg"
+                                                            class="img-fluid img-thumbnail object-fit-sm-contain "
+                                                            alt="class-avatar" style="width: 50px;">
+                                                        <span class="">Classe 82</span>
+                                                    </th>
+                                                    <td class="d-none d-md-table-cell">22 Feb 2021</td>
+                                                    <td class="d-none d-md-table-cell">20%</td>
+                                                    <td><span class="badge text-bg-success">Done</span></td>
+                                                    <td>@mdo</td>
+                                                </tr>
 
-                </div>
-            </section>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- Card F.A.Q. -->
+                                <div class="card mb-3">
+                                    <div class="card-header">Header</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Dark card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up
+                                            the bulk of
+                                            the
+                                            card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Col di destra -->
+                            <div class="col-lg-4">
+
+                                <div class="card mb-3">
+                                    <div class="card-header">Header</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Dark card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up
+                                            the
+                                            bulk of
+                                            the
+                                            card's content.</p>
+                                    </div>
+                                </div>
+                                <!-- Card Todo -->
+                                <div class="card mb-3">
+                                    <div class="card-header">Header</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Dark card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up
+                                            the
+                                            bulk of
+                                            the
+                                            card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
-        </div>
+                </section>
 
-    </main>
+            </div>
+
+
+        </main>
+
+    </div>
+
+
 
 </body>
 
