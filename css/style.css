@@ -116,14 +116,9 @@ body {
 }
 
 
+
 .bg-img {
     background-image: url(../img/sidebar-bg.png);
-}
-
-.main-content-container {
-    flex-grow: 1;
-    overflow: auto;
-    display: flex;
 }
 
 .top-bar {
@@ -142,6 +137,11 @@ body {
     --bs-badge-font-size: .45em;
     --bs-badge-font-weight: 400;
     background-color: rgba(16, 86, 184, 0.85);
+}
+
+aside .nav-hover .nav-link:hover{
+    background-color: #6C757D;
+    cursor: pointer;
 }
 
 
