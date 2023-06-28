@@ -150,7 +150,8 @@ aside .nav-hover .nav-link:hover{
 @media (min-width: 992px) {
 
     .my-aside-bar {
-        width: 150px;
+        width: 100%;
+        max-width: 150px;
         height: calc(100vh - 77px);
     }
 
